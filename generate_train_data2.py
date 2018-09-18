@@ -249,7 +249,7 @@ params_paths = ['C:/Users/jakeprecht/DDHO/data/2018_09_12 tip1.cfg',
                 'C:/Users/jakeprecht/DDHO/data/2018_09_17 tip4.cfg', 
                 'C:/Users/jakeprecht/DDHO/data/2018_09_17 tip5.cfg', 
                 'C:/Users/jakeprecht/DDHO/data/2018_09_17 tip6.cfg']
-h=0#counter/index for tip
+h=1#counter/index for tip
 for params_path in params_paths:
     k = 0 #counter/index for tau
     print(params_path)

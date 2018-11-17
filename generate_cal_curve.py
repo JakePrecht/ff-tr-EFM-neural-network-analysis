@@ -11,7 +11,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 #import pandas as pd
 
-def grab_tfp(tau_e, tau_i = 500, beta_e = 1, beta_i = 1, electronic_fraction = 1, params_path = 'C:/Users/jakeprecht/DDHO/data/tip8.cfg'):
+def grab_tfp(tau_e, tau_i = 500, beta_e = 1, beta_i = 1, electronic_fraction = 1, params_path = r'C:\Users\jakeprecht\DDHO\data\tip8.cfg'):
     """tau should be in us
     beta is stretched exponential value"""
     
@@ -69,12 +69,15 @@ def generate_curve(*list_of_taus):
     plt.scatter(tau_list, tfp_list,c='b', label='Calibration Curve')
     plt.xlabel('Tau (us)', fontsize=12, weight = 'bold')
     plt.ylabel('Tfp (us)', fontsize=12, x=-1.0, weight = 'bold')
+    plt.xscale('log')
+    plt.xlim(0.001,1000)
     plt.yticks(fontsize=12)
     plt.xticks(fontsize=12)#, '725', '750', '775', '800'), fontsize =12)
     #p.plot()
 
 if __name__ == "__main__":
     #taus = [.001,.01,.1,1,10,100,1000]
-    taus = np.linspace(.001,1000,num=50)
+    #taus = np.linspace(.001,1000,num=51)
+    taus = np.logspace(-3,3,num=51)
     generate_curve(taus)
     #grab_tfp(100)
